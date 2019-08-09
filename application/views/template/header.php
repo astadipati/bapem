@@ -68,6 +68,7 @@
             <a class="collapse-item" href="<?php echo site_url('kategori')?>">Kategori</a>
             <a class="collapse-item" href="<?php echo site_url('objek')?>">Objek</a>
             <a class="collapse-item" href="<?php echo site_url('kriteria')?>">Kriteria</a>
+            <a class="collapse-item" href="<?php echo site_url('eviden')?>">Eviden</a>
             <!-- <a class="collapse-item" href="cards.html">Objek</a>
             <a class="collapse-item" href="cards.html">Kriteria</a> -->
           </div>

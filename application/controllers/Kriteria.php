@@ -12,7 +12,7 @@ class Kriteria extends CI_Controller {
         $this->load->library('pagination');
         $config['base_url'] = base_url().'/kriteria/index/';
         $config['total_rows'] = $this->M_kriteria->tampilkan_data()->num_rows(); //dari tampilkan data menghitung jumlah record
-        $config['per_page'] = 10;
+        $config['per_page'] = 100;
         $this->pagination->initialize($config);
         $data['paging']     = $this->pagination->create_links();
         $halaman            = $this->uri->segment(3);
