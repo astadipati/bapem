@@ -10,6 +10,7 @@
   <meta name="author" content="">
 
   <title>E-APM</title>
+  <link rel="icon" href="<?php echo base_url('static/img/icon_pa.ico');?>" type="image/gif">
 
   <!-- Custom fonts for this template-->
   <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>static/vendor/fontawesome-free/css/all.min.css" />
@@ -31,9 +32,9 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('dashboard')?>">
+        <div class="sidebar-brand-icon">
+        <img class="img-profile rounded-circle" src="<?php echo base_url()?>static/img/logo.png" width="40">
         </div>
         <div class="sidebar-brand-text mx-3">e - APM <sup>2</sup></div>
       </a>
@@ -43,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo site_url('dashboard')?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -84,13 +85,13 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Eviden:</h6>
-            <a class="collapse-item" href="utilities-color.html">Kepemimpinan</a>
-            <a class="collapse-item" href="utilities-border.html">Customer Focus</a>
+            <a class="collapse-item" href="<?php echo site_url('nilai/internal')?>">List Eviden</a>
+            <!-- <a class="collapse-item" href="utilities-border.html">Customer Focus</a>
             <a class="collapse-item" href="utilities-animation.html">Proses Management</a>
             <a class="collapse-item" href="utilities-other.html">Strategic Planning</a>
             <a class="collapse-item" href="utilities-other.html">Resource Management</a>
             <a class="collapse-item" href="utilities-other.html">Document System</a>
-            <a class="collapse-item" href="utilities-other.html">Performance Result</a>
+            <a class="c.id_eviden, c.filecollapse-item" href="utilities-other.html">Performance Result</a> -->
           </div>
         </div>
       </li>
@@ -112,13 +113,14 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Assesment:</h6>
-            <a class="collapse-item" href="utilities-color.html">Kepemimpinan</a>
-            <a class="collapse-item" href="utilities-border.html">Customer Focus</a>
+            <a class="collapse-item" href="<?php echo site_url('nilai/external')?>">Nilai Eviden</a>
+            <!-- <a class="collapse-item" href="utilities-color.html">Eviden Check</a> -->
+            <!-- <a class="collapse-item" href="utilities-border.html">Customer Focus</a>
             <a class="collapse-item" href="utilities-animation.html">Proses Management</a>
             <a class="collapse-item" href="utilities-other.html">Strategic Planning</a>
             <a class="collapse-item" href="utilities-other.html">Resource Management</a>
             <a class="collapse-item" href="utilities-other.html">Document System</a>
-            <a class="collapse-item" href="utilities-other.html">Performance Result</a></div>
+            <a class="collapse-item" href="utilities-other.html">Performance Result</a></div> -->
         </div>
       </li>
 
@@ -246,7 +248,7 @@
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                   
-                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/foto1.jpeg" alt="">
+                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/admin.jpeg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -256,7 +258,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/foto1.jpeg" alt="">
+                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/admin.jpeg" alt="">
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -266,7 +268,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/foto1.jpeg" alt="">
+                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/admin.jpeg" alt="">
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -276,7 +278,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/foto1.jpeg" alt="">
+                    <img class="rounded-circle" src="<?php echo base_url()?>static/img/admin.jpeg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
@@ -293,8 +295,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="<?php echo base_url()?>static/img/foto1.jpeg">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <img class="img-profile rounded-circle" src="<?php echo base_url()?>static/img/admin.jpeg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

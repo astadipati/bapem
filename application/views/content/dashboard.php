@@ -13,7 +13,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Kitchen Sink
+                            <!-- Kitchen Sink -->
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -21,33 +21,31 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>Nomor</th>
+                                            <th>Kriteria</th>
+                                            <th>Jumlah Ceklist</th>
+                                            <!-- <th></th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
+                                        <?php
+                                        $i = $this->uri->segment('3') + 1;
+                                        foreach ($data->result() as $row) {?>
                                         <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
+                                            <td><?php echo $i++ ?></td>
+                                            <td><?= $row->kriteria ?></td>
+                                            <td><?= $row->total ?></td>
+
                                         </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
+                                <?php 
+                                 echo $paging;
+                                ?>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
