@@ -89,25 +89,34 @@ Class M_eviden extends CI_Model{
         }
         // print_r($data);
         $this->db->insert($this->table, $data);
-
+        
     }
- 
-    function update(){
+    
+    function update($file){
+        // update tanpa file
+        if(empty($file)){
             $data = array(
-                'id_kategori'=>$this->input->post('id_kategori', TRUE),
-                'kriteria'=>$this->input->post('kriteria', TRUE),
-                'ceklist'=>$this->input->post('ceklist', TRUE),
-                'keterangan'=>$this->input->post('keterangan', TRUE)
+                'id_kriteria'=>$this->input->post('id_kriteria', TRUE),
+                'nomor'=>$this->input->post('nomor', TRUE),
+                'nama_eviden'=>$this->input->post('nama_eviden', TRUE)
             );
-        $id_kriteria = $this->input->post('id_kriteria');
-        $this->db->where('id_kriteria', $id_kriteria);
-        // print_r($data);
-        $this->db->update($this->table, $data);
+        }else{
+            $data = array(
+                'id_kriteria'=>$this->input->post('id_kriteria', TRUE),
+                'nomor'=>$this->input->post('nomor', TRUE),
+                'nama_eviden'=>$this->input->post('nama_eviden', TRUE),
+                'file'=>$file
+            );
+        } 
+        
+        $id_eviden = $this->input->post('id_eviden');
+        $this->db->where('id_eviden', $id_eviden);
+        $this->db->update($this->table, $data);      
     }
 
-    function hapus($id_kriteria){
-        $hasil=$this->db->query("DELETE FROM tbl_kriteria WHERE id_kriteria='$id_kriteria'");
+    function hapus($id){
+        $hasil=$this->db->query("DELETE FROM tbl_eviden WHERE id_eviden='$id'");
         return $hasil;
     }
 
-    }
+}

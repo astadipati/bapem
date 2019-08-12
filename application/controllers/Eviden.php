@@ -26,7 +26,6 @@ class Eviden extends CI_Controller {
 		$this->load->view('template/footer');
     }
     
-
     function add(){
         if (isset($_POST['submit'])){
             $config['upload_path'] = './uploads/eviden';
@@ -68,22 +67,45 @@ class Eviden extends CI_Controller {
         // $this->load->view('template/footer');
     }
 
-    function edit(){
+    function edit($file){
         if (isset($_POST['submit'])){
-             $this->M_eviden->update();
-             redirect('eviden');
+                $config['upload_path'] = './uploads/eviden';
+                $config['allowed_types'] = 'pdf|gif|jpg|png';
+                $config['max_size']     = 512000;
+                $config['overwrite'] = TRUE;
+                $this->load->library('upload',$config);
+                $this->upload->do_upload('userfile');
+                $upload = $this->upload->data();
+                $this->M_eviden->update($upload['file_name']);
+                redirect('nilai/internal');
+                // redirect('instansi');
+            //  $this->M_eviden->update();
         }else{
             $id           = $this->uri->segment(3);
             $data['data'] = $this->db->get_where('tbl_eviden',array ('id_eviden'=>$id))->row_array();
             $this->load->view('template/header');
-            $this->load->view('content/eviden/edit',$data);
+            $this->load->view('content/intern/update',$data);
             $this->load->view('template/footer');
             }
     }
 
+// update jika sudah ada eviden
+    // function update(){
+    //     if (isset($_POST['submit'])){
+    //          $this->M_eviden->update();
+    //          redirect('eviden');
+    //     }else{
+    //         $id           = $this->uri->segment(3);
+    //         $data['data'] = $this->db->get_where('tbl_eviden',array ('id_eviden'=>$id))->row_array();
+    //         $this->load->view('template/header');
+    //         $this->load->view('content/eviden/edit',$data);
+    //         $this->load->view('template/footer');
+    //         }
+    // }
+
     function delete(){
         $id           = $this->uri->segment(3);
         $this->M_eviden->hapus($id);
-        redirect('eviden');
+        redirect('nilai/internal');
     }
 }

@@ -69,7 +69,6 @@
             <a class="collapse-item" href="<?php echo site_url('kategori')?>">Kategori</a>
             <a class="collapse-item" href="<?php echo site_url('objek')?>">Objek</a>
             <a class="collapse-item" href="<?php echo site_url('kriteria')?>">Kriteria</a>
-            <a class="collapse-item" href="<?php echo site_url('eviden')?>">Eviden</a>
             <!-- <a class="collapse-item" href="cards.html">Objek</a>
             <a class="collapse-item" href="cards.html">Kriteria</a> -->
           </div>
@@ -85,6 +84,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Eviden:</h6>
+            <a class="collapse-item" href="<?php echo site_url('eviden')?>">Tambah Eviden</a>
             <a class="collapse-item" href="<?php echo site_url('nilai/internal')?>">List Eviden</a>
             <!-- <a class="collapse-item" href="utilities-border.html">Customer Focus</a>
             <a class="collapse-item" href="utilities-animation.html">Proses Management</a>

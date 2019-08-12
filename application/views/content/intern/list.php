@@ -37,7 +37,9 @@
                                         <?php
 
                                         $atts = array(
-                                            'width'       => 800,
+                                            'width'       => 900,
+                                            'class'       =>'btn btn-success btn-sm',
+                                            'title'       =>'Lihat Eviden',
                                             'height'      => 600,
                                             'scrollbars'  => 'yes',
                                             'status'      => 'yes',
@@ -57,7 +59,15 @@
                                             <td><?= $row->nama_eviden ?></td>
                                             <td><?= $row->nomor ?></td>
 
-                                            <td><?php echo anchor_popup("/uploads/eviden/".$row->file, 'Lihat', $atts) ?></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="<?php echo base_URL()?>eviden/edit/<?php echo $row->id_eviden?>" class="btn btn-warning btn-sm"  title="Edit Eviden">Edit</a>
+                                                    <a href="<?php echo base_URL()?>eviden/delete/<?php echo $row->id_eviden?>" class="btn btn-danger btn-sm" title="Hapus Eviden" onclick="return confirm('Anda Yakin Menghapus Data ini ..?')">Del</a>			
+                                            <?php echo anchor_popup("/uploads/eviden/".$row->file, 'Lihat', $atts) ?>
+                                                </div>
+
+                                            <!-- end -->
+                                            </td>
                                         <?php
                                             }
                                         ?>

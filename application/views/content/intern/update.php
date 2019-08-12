@@ -15,26 +15,35 @@
                             </div>
                             <br>
                             <?php
-                            echo form_open_multipart('eviden/add', 'role="form" class="form-horizontal"');
+                            echo form_open_multipart('eviden/edit', 'role="form" class="form-horizontal"');
+                            echo form_hidden('id_eviden', $data['id_eviden']);
                             ?>
-                                
-                                <div class="form-group">
-                                    <label for="">ID</label>
+                                  
+                                <!-- <div class="form-group">
+                                    <label for="">ID Kriteria</label>
                                     <input type="text" name="id_kriteria" value=" <?php 
                                     $uri = $this->uri->segment(3);
-                                    echo $uri; ?>" id="form-field-1" class="form-control" readonly="readonly">
+                                    echo $uri; ?>" id="form-field-1" class="form-control" disabled>
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="">ID</label>
+                                    <input type="text" value="<?php echo $data ['id_eviden']?>" placeholder="Nomor" id="form-field-1" class="form-control" readonly="readonly">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">ID</label>
+                                    <input type="text" name="id_kriteria" value="<?php echo $data ['id_kriteria']?>" placeholder="Nomor" id="form-field-1" class="form-control" readonly="readonly">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nomor</label>
-                                    <input type="text" name="nomor" placeholder="Nomor" id="form-field-1" class="form-control">
+                                    <input type="text" name="nomor" value="<?php echo $data ['nomor']?>" placeholder="Nomor" id="form-field-1" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nama Eviden</label>
-                                    <input type="text" name="nama_eviden" placeholder="Nama Eviden" id="form-field-1" class="form-control">
+                                    <input type="text" name="nama_eviden" value="<?php echo $data ['nama_eviden']?>" placeholder="Nama Eviden" id="form-field-1" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="">File</label>
-                                    <input type="file" name="userfile" size="20">
+                                    <input type="file" name="userfile" size="20" value="<?php echo $data ['file']?>">
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-3">

@@ -38,7 +38,7 @@
                                             <td><?= $row->kategori ?></td>
                                             <td><?= $row->keterangan ?></td>
 
-                                            <td>edit|delete</td>
+                                            <td>Disabled</td>
                                         </tr>
                                         <?php
                                             }

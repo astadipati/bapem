@@ -41,14 +41,15 @@
                                             <td><?= $row->kriteria ?></td>
                                             <td><?= $row->ceklist ?></td>
                                             <td><?= $row->keterangan ?></td>
+                                            <td><? echo "Disabled"?></td>
 
-                                            <td>
+                                            <!-- <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_URL()?>kriteria/edit/<?php echo $row->id_kriteria?>" class="btn btn-warning btn-sm"  title="Edit kriteria">Edit</a>
 
                                                     <a href="<?php echo base_URL()?>kriteria/delete/<?php echo $row->id_kriteria?>" class="btn btn-danger btn-sm" title="Hapus Data" onclick="return confirm('Anda Yakin Menghapus Data ini ..?')">Del</a>			
                                                 </div>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <?php
                                             }

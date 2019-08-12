@@ -17,7 +17,7 @@ Class M_kriteria extends CI_Model{
                                     LEFT JOIN tbl_kategori b 
                                     ON a.id_kategori = b.id_kategori
                                     ORDER BY a.id_kriteria DESC limit $halaman, $offset");
-    }
+    } 
     
     function laporan_sm( $tanggal1, $tanggal2){
         // $date = DateTime::createFromFormat('Y/m/d',);
